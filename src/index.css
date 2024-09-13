@@ -18,6 +18,7 @@
   --border-color: hsl(228, 99%, 98%);
   --body-color: #fff;
   --container-color: #fff;
+  --new-color: hsl(261, 80%, 80%);
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -91,6 +92,7 @@ img {
 
 input,
 button {
+  border: var(--text-color) solid 1px;
   font-family: var(--body-font);
   outline: none;
   border: none;
@@ -221,8 +223,14 @@ button {
 /* Change background header */
 .scroll-header {
   background-color: var(--body-color);
+  /* background-color: var(--new-color); */
   box-shadow: 0 1px 4px hsla(228, 4%, 15%, 0.1);
+
+  .nav__item{
+    font: black;
+  }
 }
+
 
 .scroll-header .nav__logo {
   color: var(--first-color);
@@ -233,7 +241,8 @@ button {
 
 /*=============== HOME ===============*/
 .home {
-  background: linear-gradient(170deg, hsl(0, 0%, 22%) 0%, hsl(0, 0%, 6%) 30%);
+  /* background: linear-gradient(170deg, hsl(0, 0%, 22%) 0%, hsl(0, 0%, 6%) 30%); */
+  background: linear-gradient(170deg, hsl(0, 0%, 22%) 0%, hsl(221, 100%, 8%) 30%);
   padding-bottom: 0;
 }
 
@@ -346,6 +355,7 @@ button {
 }
 
 .nav__button {
+  margin-left: 5%;
   display: none;
 }
 
@@ -441,6 +451,50 @@ button {
   right: calc(50% - 3rem);
 }
 
+.add-property-form {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-aligns all items horizontally */
+  justify-content: center; /* Ensures the form is centered vertically */
+  width: 100%; /* Full width of the container */
+  /* margin: 0 auto;  */
+}
+
+.megh-1 {
+  width: 50%; /* Sets the width of inputs to 50% */
+  border: 1px solid #ccc; /* Light grey border */
+  padding: 10px; /* Adds padding inside the input */
+  margin-bottom: 10px; /* Adds space between input fields */
+  border-radius: 4px; /* Rounded corners */
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  font-size: 16px; /* Ensures a consistent font size */
+}
+
+.megh-1:focus {
+  border-color: #007bff; /* Changes border color on focus */
+  outline: none; /* Removes default blue outline */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Adds a subtle glow effect on focus */
+}
+
+.btn.button {
+  width: 50%; /* Button width is also 50% */
+  padding: 10px; /* Padding for the button */
+  text-align: center; /* Centers text within the button */
+  background-color: #007bff; /* Primary color for the button */
+  color: white; /* White text color */
+  border: none; /* Removes border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+.btn.button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* .btn{
+  margin-top: 1%;
+} */
 /*=============== VALUE ===============*/
 .value__container {
   row-gap: 3rem;
@@ -631,13 +685,18 @@ button {
 }
 
 /*=============== FOOTER ===============*/
+.footer_section{
+  padding-top: 20px;
+  /* margin-top: 20px; */
+  background: linear-gradient(170deg, hsl(0, 0%, 22%) 0%, hsl(221, 100%, 8%) 30%);
+}
 .footer__container {
   row-gap: 2.5rem;
 }
 
 .footer__logo {
-  color: var(--first-color);
-  font-size: var(--h3-font-size);
+  color: var(--new-color);
+  font-size: var(--h2-font-size);
   font-weight: var(--font-semi-bold);
   display: inline-flex;
   align-items: center;
@@ -666,6 +725,7 @@ button {
 }
 
 .footer__title {
+  color: var(--new-color);
   font-size: var(--h3-font-size);
   margin-bottom: 1rem;
 }
@@ -675,12 +735,13 @@ button {
 }
 
 .footer__link {
-  color: var(--text-color);
+  color: var(--body-color);
   transition: 0.3s;
 }
 
 .footer__link:hover {
   color: var(--title-color);
+  text-decoration: underline solid var(--new-color);
 }
 
 .footer__social {
@@ -690,12 +751,12 @@ button {
 
 .footer__social-link {
   font-size: 1.25rem;
-  color: var(--title-color);
+  color: var(--first-color-lighten);
   transition: 0.3s;
 }
 
 .footer__social-link:hover {
-  color: var(--title-color);
+  color: var(--new-color);
 }
 
 .footer__info,
